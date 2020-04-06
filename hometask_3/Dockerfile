@@ -2,7 +2,7 @@
 From centos:7 as base
 MAINTAINER <nikkuprikov@gmail.com>
 
-CMD sudo yum update httpd \
+CMD sudo yum update && \
 sudo yum install httpd && \
 sudo systemctl start httpd
 
