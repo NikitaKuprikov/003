@@ -1,6 +1,4 @@
-######
 FROM mysql:5.7
-
 MAINTAINER <nikkuprikov18@gmail.com>
 
 CMD apt-get update
