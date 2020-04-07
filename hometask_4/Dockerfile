@@ -1,10 +1,9 @@
-FROM mysql:5.7
-MAINTAINER <nikkuprikov18@gmail.com>
+From centos:7 as base
+MAINTAINER <nikkuprikov@gmail.com>
 
-CMD apt-get update
+CMD sudo yum update && \
+sudo yum install httpd && \
+sudo systemctl start httpd
 
-EXPOSE 3306
-
-ENV MYSQL_DATABASE kuprikov
-ENV MYSQL_USER User
-ENV MYSQL_PASSWORD Password
+EXPOSE 8081 
+ENTRYPOINT tail -f /dev/null
