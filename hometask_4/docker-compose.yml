@@ -1,13 +1,10 @@
-version: '3.0'
-	services:
-  	ubuntu:
-    	build:
-      	context: ./centos_docker
-      	dockerfile: DockerfileCentos
- 
-
-  	mysql:
-    	build:
-      	context: ./mysql:5.7_docker
-      	dockerfile: DockerfileMySQL
-  
+version: "3.7"
+services:
+  centos:
+    build:
+      context: ./Centos
+      dockerfile: Dockerfile
+mysql:
+  build:
+    context: ./MySQL
+      dockerfile: Dockerfile
