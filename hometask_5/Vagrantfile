@@ -8,7 +8,7 @@ Vagrant.configure("2") do |config|
   inline:
     "apt update
     apt -y install docker-ce
-    pip install docker-compose
+    install docker-compose
     docker-compose up -d"
   end 
 end
