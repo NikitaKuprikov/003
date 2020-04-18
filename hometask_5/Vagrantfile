@@ -6,6 +6,9 @@ Vagrant.configure("2") do |config|
   ubuntu.vm.synced_folder ".", "/home/ubuntu/"
   ubuntu.vm.provision "shell",
   inline:
-    "docker-compose up -d"
+    "apt update
+    apt -y install docker-ce
+    pip install docker-compose
+    docker-compose up -d"
   end 
 end
