@@ -1,0 +1,21 @@
+version: "3.7"
+services:
+  mysql:
+   image: mysql
+	container_name: mysql:latest
+	ports: - "3306:3306"
+	networks: -overlay
+	environment: 
+		MY_ROOT_PASSWORD: kuprikov
+		MYSQL_DATABASE: kuprikov
+  apache:
+   image: apache:latest
+	container_name: apache
+	ports: - "8080:80"
+	networks: -overlay
+	healthcheck:
+  test: ["CMD", "curl", "-f", "http://localhost"]
+  interval: 1m
+  timeout: 10s
+  retries: 3
+  start_period: 1m
